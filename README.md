@@ -79,17 +79,50 @@ Este proyecto está configurado para desplegarse automáticamente en GitHub Page
 Si necesitas desplegar manualmente:
 
 ```bash
-# Instalar angular-cli-ghpages
+# Instalar angular-cli-ghpages (si no está instalado)
 npm install -g angular-cli-ghpages
 
-# Construir y desplegar
-ng build --configuration production --base-href="/nombre-del-repositorio/"
-npx angular-cli-ghpages --dir=dist/wedding-invitation
+# Construir el proyecto para producción con base-href correcto
+ng build --configuration production --base-href="/wedding/"
+
+# Desplegar a GitHub Pages (usar el subdirectorio browser)
+npx angular-cli-ghpages --dir=dist/wedding-b-y-e/browser
 ```
+
+**Importante**: 
+- En Angular 17+, los archivos se generan en `dist/wedding-b-y-e/browser/`
+- El `--base-href="/wedding/"` es crucial para que GitHub Pages encuentre los recursos correctamente
 
 ### URL de Producción
 Una vez desplegado, la invitación estará disponible en:
-`https://tu-usuario.github.io/nombre-del-repositorio/`
+`https://tris460.github.io/wedding/`
+
+**Estado del despliegue**: ✅ Desplegado exitosamente
+
+### 🔧 Solución de Problemas
+
+Si obtienes un error 404 al acceder al sitio:
+
+1. **Verificar la construcción**: Asegúrate de que existe `dist/wedding-b-y-e/browser/index.html`
+2. **Directorio correcto**: Usa `dist/wedding-b-y-e/browser` (no `dist/wedding-b-y-e`)
+3. **Esperar propagación**: GitHub Pages puede tardar unos minutos en actualizar
+
+**Comandos de verificación**:
+```bash
+# Verificar que el build fue exitoso
+ls dist/wedding-b-y-e/browser/index.html
+
+# Verificar que el base-href está configurado
+grep 'base href="/wedding/"' dist/wedding-b-y-e/browser/index.html
+
+# Si hay problemas, reconstruir y redesplegar
+ng build --configuration production --base-href="/wedding/"
+npx angular-cli-ghpages --dir=dist/wedding-b-y-e/browser
+```
+
+**Errores comunes**:
+- **404 en archivos JS/CSS**: Falta el `--base-href="/wedding/"` en el build
+- **Página en blanco**: Verificar que se está desplegando desde `browser/` subdirectorio
 
 ## 🧪 Testing
 
