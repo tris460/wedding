@@ -156,6 +156,74 @@
   font-style: italic;
 }
 
+.parents-section {
+  padding: 40px 20px;
+  background-color: var(--color-white);
+}
+
+.parents-content {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  text-align: center;
+}
+
+.bride-parents,
+.groom-parents {
+  padding: 20px;
+  border-radius: 10px;
+  background: rgba(15, 32, 64, 0.02);
+  border: 1px solid rgba(15, 32, 64, 0.08);
+}
+
+.bride-parents h4,
+.groom-parents h4 {
+  font-family: var(--font-title);
+  color: var(--color-navy);
+  font-size: 1.3rem;
+  margin: 0 0 10px 0;
+  font-weight: 600;
+}
+
+.bride-parents p,
+.groom-parents p {
+  font-family: var(--font-text);
+  color: var(--color-black);
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.parent-name {
+  margin: 5px 0 !important;
+  display: block;
+}
+
+.parents-divider {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--color-navy), transparent);
+  margin: 10px auto;
+  width: 60%;
+  opacity: 0.4;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .parents-content {
+    flex-direction: row;
+    gap: 40px;
+  }
+  
+  .bride-parents,
+  .groom-parents {
+    flex: 1;
+  }
+}
+
 .rings-section {
   width: 100%;
   padding: 40px;

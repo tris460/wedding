@@ -122,6 +122,16 @@
   font-size: 1.1rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.flag-icon {
+  width: 20px;
+  height: 15px;
+  object-fit: cover;
+  border-radius: 2px;
 }
 
 .lang-btn:hover {
@@ -231,6 +241,11 @@
   .lang-btn {
     padding: 6px 10px;
     font-size: 1rem;
+  }
+  
+  .flag-icon {
+    width: 18px;
+    height: 13px;
   }
   
   .heart-icon {

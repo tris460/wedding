@@ -1,59 +1,145 @@
-# WeddingBYE
+# 💍 Invitación de Boda - Bety & Erick
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.4.
+Una elegante invitación digital para la boda de Bety y Erick, desarrollada con Angular 20. Esta aplicación web presenta todos los detalles importantes del evento de manera interactiva y responsive.
 
-## Development server
+## ✨ Características
 
-To start a local development server, run:
+- **Diseño Responsive**: Optimizado para dispositivos móviles y desktop
+- **Multiidioma**: Soporte para español e inglés con selector de banderas
+- **Secciones Interactivas**:
+  - 🏠 **Inicio**: Presentación principal de los novios
+  - 📅 **Detalles**: Información del evento con contador regresivo
+  - 📍 **Ubicación**: Salón Villa Constanza con botón para abrir en Maps
+  - 👗 **Para tomar en cuenta**: Código de vestimenta y recomendaciones
+  - 🎁 **Regalos**: Mesa de regalos y opciones de contribución
+  - ✅ **Confirmar asistencia**: Formulario RSVP
+  - 📞 **Contacto**: Información de contacto
+- **Reproductor de Música**: Canción especial de los novios
+- **Galería de Fotos**: Momentos especiales de la pareja
+- **Itinerario**: Cronograma detallado del día de la boda
 
+## 🛠️ Tecnologías
+
+- Angular 20
+- TypeScript
+- SCSS
+- Responsive Design
+- PWA Ready
+
+## 🚀 Desarrollo Local
+
+### Prerrequisitos
+- Node.js (versión 18 o superior)
+- npm o yarn
+- Angular CLI
+
+### Instalación
 ```bash
+# Clonar el repositorio
+git clone <repository-url>
+cd wedding-invitation
+
+# Instalar dependencias
+npm install
+
+# Iniciar servidor de desarrollo
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Una vez que el servidor esté ejecutándose, abre tu navegador y navega a `http://localhost:4200/`. La aplicación se recargará automáticamente cuando modifiques cualquier archivo fuente.
 
-## Code scaffolding
+## 📦 Construcción para Producción
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Para construir el proyecto para producción:
 
 ```bash
-ng generate --help
+ng build --configuration production
 ```
 
-## Building
+Los archivos compilados se almacenarán en el directorio `dist/`.
 
-To build the project run:
+## 🌐 Despliegue Automático en GitHub Pages
+
+Este proyecto está configurado para desplegarse automáticamente en GitHub Pages usando GitHub Actions.
+
+### Configuración Inicial
+
+1. **Habilitar GitHub Pages**:
+   - Ve a Settings → Pages en tu repositorio
+   - Selecciona "GitHub Actions" como fuente
+
+2. **Configurar el Workflow**:
+   El archivo `.github/workflows/deploy.yml` ya está configurado para:
+   - Construir la aplicación automáticamente
+   - Desplegar en GitHub Pages
+   - Ejecutarse en cada push a la rama `main`
+
+### Despliegue Manual
+
+Si necesitas desplegar manualmente:
 
 ```bash
-ng build
+# Instalar angular-cli-ghpages
+npm install -g angular-cli-ghpages
+
+# Construir y desplegar
+ng build --configuration production --base-href="/nombre-del-repositorio/"
+npx angular-cli-ghpages --dir=dist/wedding-invitation
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+### URL de Producción
+Una vez desplegado, la invitación estará disponible en:
+`https://tu-usuario.github.io/nombre-del-repositorio/`
 
-## Running unit tests
+## 🧪 Testing
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Para ejecutar las pruebas unitarias:
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+## 📁 Estructura del Proyecto
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
+```
+src/
+├── app/
+│   ├── components/          # Componentes de la aplicación
+│   │   ├── header/         # Navegación y selector de idioma
+│   │   ├── home/           # Página principal
+│   │   ├── details/        # Detalles del evento y padres
+│   │   ├── location/       # Ubicación del evento
+│   │   ├── dress-code/     # Código de vestimenta
+│   │   ├── registry/       # Mesa de regalos
+│   │   ├── rsvp/          # Confirmación de asistencia
+│   │   ├── contact/       # Información de contacto
+│   │   ├── gallery/       # Galería de fotos
+│   │   ├── itinerary/     # Itinerario del día
+│   │   └── footer/        # Pie de página
+│   ├── services/          # Servicios (traducción, etc.)
+│   └── pipes/            # Pipes personalizados
+└── public/               # Recursos estáticos (imágenes, audio)
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## 🎨 Personalización
 
-## Additional Resources
+### Colores y Estilos
+Los colores principales se definen en `src/styles.scss`:
+- `--color-navy`: Azul marino principal
+- `--color-silver`: Gris plata
+- `--color-white`: Blanco
+- `--color-black`: Negro
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Traducciones
+Las traducciones se gestionan en `src/app/services/translation.service.ts` con soporte para español e inglés.
+
+### Imágenes
+Todas las imágenes se almacenan en la carpeta `public/` y se referencian directamente.
+
+## 📝 Licencia
+
+Este proyecto es de uso personal para la boda de Bety & Erick.
+
+## 💝 Créditos
+
+Desarrollado con ❤️ para celebrar el amor de Bety & Erick

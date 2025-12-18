@@ -9,4 +9,8 @@ import { TranslatePipe } from '../../pipes/translate.pipe';
 })
 export class Location {
 
+  openInMaps(): void {
+    const mapsUrl = 'https://maps.app.goo.gl/XMijGBCwqNPSQLoN8';
+    window.open(mapsUrl, '_blank');
+  }
 }
