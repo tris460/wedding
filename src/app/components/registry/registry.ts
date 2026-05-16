@@ -15,13 +15,13 @@ export class Registry {
     {
       holder: 'Beatriz Martinez Pérez',
       number: '4152 3142 8496 9972',
-      bankImage: 'bbva.png',
+      bankImage: 'logos/bbva.png',
       bankName: 'BBVA'
     },
     {
       holder: 'Erick Alejandro Plácido Vázquez',
       number: '4189 1431 4826 8082',
-      bankImage: 'banorte.png',
+      bankImage: 'logos/banorte.png',
       bankName: 'Banorte'
     }
   ];
