@@ -14,10 +14,24 @@
       
       <div class="footer-section">
         <h4>{{ 'footer.contact' | translate }}</h4>
-        <p>{{ 'footer.contact.subtitle' | translate }}</p>
-        <p>{{ 'footer.love' | translate }}</p>
+        <p><a href="#contact" (click)="scrollTo('contact')">{{ 'footer.contact.subtitle' | translate }}</a></p>
       </div>
-      <p><img src="icons/heart.svg" alt="corazón" class="heart-icon"></p>
+      
+      <div class="footer-section">
+        <h4>{{ 'footer.links' | translate }}</h4>
+        <p>
+          <a href="https://momentumweddingstudio.pic-time.com/client/betty--erick/gallery" 
+            target="_blank"
+            style="opacity: 0.9;">
+            {{ 'footer.save-the-date' | translate }}
+          </a>
+        </p>
+      </div>
+    
+      <div class="footer-section">
+        <p>{{ 'footer.love' | translate }}</p>
+        <p><img src="icons/heart.svg" alt="corazón" class="heart-icon"></p>
+      </div>
     </div>
     
     <div class="footer-bottom">

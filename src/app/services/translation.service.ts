@@ -108,6 +108,8 @@ export class TranslationService {
       'footer.contact.subtitle': '¿Preguntas? Contáctanos',
       'footer.love': 'Con amor, B & E',
       'footer.rights': '2025 Bety & Erick - Nuestro día especial',
+      'footer.links': 'Otros enlaces',
+      'footer.save-the-date': 'Save the date',
     },
     en: {
       'nav.home': 'Home',
@@ -204,6 +206,8 @@ export class TranslationService {
       'footer.contact.subtitle': 'Questions? Contact us',
       'footer.love': 'With love, B & E',
       'footer.rights': '2025 Bety & Erick - Our special day',
+      'footer.links': 'Other links',
+      'footer.save-the-date': 'Save the date',
     }
   };
 
