@@ -105,3 +105,28 @@
     max-width: 600px;
   }
 }
+
+
+.std-section-2 {
+  width: 100%;
+  padding: 0px 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.std-image-2 {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transform: translateY(50px) scale(0.9);
+  transition: all 0.8s ease-out;
+}
+
+.std-image-2.loaded {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}

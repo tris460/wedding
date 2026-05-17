@@ -100,6 +100,30 @@
   opacity: 0.8;
 }
 
+.std-section {
+  width: 100%;
+  padding: 0px 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.std-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transform: translateY(50px) scale(0.9);
+  transition: all 0.8s ease-out;
+}
+
+.std-image.loaded {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 0 15px;
