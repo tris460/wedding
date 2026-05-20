@@ -32,15 +32,27 @@
                 </button>
               </div>
             </div>
-            <div class="detail-item">
-              <span class="label">{{ 'gifts.bank.number' | translate }}</span>
-              <div class="value-container">
-                <span class="value card-number">{{ cards[activeTab].number }}</span>
-                <button class="copy-btn" (click)="copyToClipboard(cards[activeTab].number)">
-                  <img src="icons/copy.png" alt="Copiar" class="copy-icon">
-                </button>
+            @if (cards[activeTab].number) {
+              <div class="detail-item">
+                <span class="label">{{ 'gifts.bank.number' | translate }}</span>
+                <div class="value-container">
+                  <span class="value card-number">{{ cards[activeTab].number }}</span>
+                  <button class="copy-btn" (click)="copyToClipboard(cards[activeTab].number || '')">
+                    <img src="icons/copy.png" alt="Copiar" class="copy-icon">
+                  </button>
+                </div>
               </div>
-            </div>
+            }
+            @if (cards[activeTab].link) {
+              <div class="detail-item">
+                <div class="value-container" style="justify-content: center;">
+                  <a [href]="cards[activeTab].link" target="_blank" class="value card-number" style="cursor: pointer;">{{ 'gifts.bank.send' | translate }}</a>
+                 <a [href]="cards[activeTab].link" target="_blank" class="copy-btn">
+                    <img src="icons/cadena.png" alt="Abrir" class="copy-icon">
+                 </a>
+                </div>
+              </div>
+            }
           </div>
         </div>
         
