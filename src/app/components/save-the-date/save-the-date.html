@@ -1,0 +1,47 @@
+<section class="gallery-section" (window:keydown)="onKeydown($event)" (dblclick)="onDoubleClick($event)">
+  <div class="gallery-header">
+    <h2>Save the Date</h2>
+    <p class="gallery-date">05 de mayo de 2026</p>
+  </div>
+
+  <div class="gallery-grid">
+    @for (photo of photos; track $index) {
+      <div class="gallery-item" [class.loaded]="isLoaded($index)" (click)="openLightbox($index)">
+        <div class="placeholder"></div>
+        <img
+          [src]="photo"
+          [alt]="'Foto ' + ($index + 1)"
+          (load)="onImageLoad($index)"
+          loading="lazy"
+        />
+      </div>
+    }
+  </div>
+
+  <!-- Lightbox -->
+  @if (lightboxOpen) {
+    <div class="lightbox" (click)="closeLightbox()">
+      <div class="lightbox-content" (click)="$event.stopPropagation()">
+        <img [src]="photos[currentIndex]" [alt]="'Foto ' + (currentIndex + 1)" />
+        <div class="lightbox-counter">{{ currentIndex + 1 }} / {{ photos.length }}</div>
+      </div>
+
+      <button class="lightbox-btn lightbox-prev" (click)="prevImage($event)" aria-label="Anterior">&#10094;</button>
+      <button class="lightbox-btn lightbox-next" (click)="nextImage($event)" aria-label="Siguiente">&#10095;</button>
+      <button class="lightbox-btn lightbox-close" (click)="closeLightbox()" aria-label="Cerrar">&#10005;</button>
+      <button class="lightbox-btn lightbox-download" (click)="downloadImage($event)" aria-label="Descargar">⬇</button>
+    </div>
+  }
+
+  <!-- Hearts animation -->
+  @for (heart of hearts; track heart.id) {
+    <span
+      class="heart-float"
+      [style.left.px]="heart.x"
+      [style.top.px]="heart.y"
+    >♥</span>
+  }
+
+  <!-- Scroll to top -->
+  <button class="scroll-top-btn" (click)="scrollToTop()" aria-label="Ir al inicio">↑</button>
+</section>

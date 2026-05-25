@@ -49,6 +49,17 @@
   opacity: 0.9;
 }
 
+.footer-link {
+  color: var(--color-white);
+  text-decoration: underline;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
 .footer-bottom {
   border-top: 1px solid rgba(232, 232, 232, 0.2);
   padding-top: 20px;
