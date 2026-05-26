@@ -1,3 +1,7 @@
+.container {
+  margin-top: 40px;
+}
+
 .contact {
   background-color: var(--color-white);
   padding: 50px 20px;
@@ -129,4 +133,20 @@
 .std-image-2.loaded {
   opacity: 1;
   transform: translateY(0) scale(1);
+}
+
+
+.parallax-banner {
+  width: 100%;
+  height: 650px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@supports (-webkit-touch-callout: none) {
+  .parallax-banner {
+    background-attachment: scroll;
+  }
 }

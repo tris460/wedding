@@ -1,11 +1,11 @@
 .location-section {
   background-color: var(--color-white);
-  padding: 60px 0;
+  padding: 0 0 60px;
 }
 
 .container {
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 30px auto 0;
   padding: 0 20px;
 }
 
@@ -100,28 +100,19 @@
   opacity: 0.8;
 }
 
-.std-section {
+.parallax-banner {
   width: 100%;
-  padding: 0px 40px 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 650px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.std-image {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-  border-radius: 5px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  opacity: 0;
-  transform: translateY(50px) scale(0.9);
-  transition: all 0.8s ease-out;
-}
-
-.std-image.loaded {
-  opacity: 1;
-  transform: translateY(0) scale(1);
+@supports (-webkit-touch-callout: none) {
+  .parallax-banner {
+    background-attachment: scroll;
+  }
 }
 
 @media (max-width: 768px) {
